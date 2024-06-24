@@ -15,7 +15,7 @@
 .profile__title {
   font-size: 42px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 1.1;
   grid-area: title;
   margin: 0;
   text-overflow: ellipsis;
@@ -26,7 +26,7 @@
 .profile__description {
   font-size: 18px;
   font-weight: 400;
-  line-height: 21.78px;
+  line-height: 1.2;
   grid-area: description;
   margin: 0;
   padding-top: 7px;
@@ -43,12 +43,22 @@
   margin-bottom: 9px;
 }
 
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
   border: 2px solid #ffffff;
   width: 150px;
   height: 50px;
   margin-left: auto;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 70%;
 }
 
 .profile__image {
@@ -58,4 +68,77 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
+}
+
+@media screen and (max-width: 775px) {
+  .profile {
+    display: flex;
+    padding-top: 40px;
+  }
+
+  .profile__info {
+    width: 100%;
+  }
+
+  .profile__description {
+    width: 100%;
+    padding-top: 7px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__info {
+    margin-top: 30px;
+    max-width: 90%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .profile__title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    margin: 0;
+    max-width: 222px;
+    min-width: 201px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .profile__description {
+    line-height: 17px;
+    font-weight: 400;
+    margin: 0 0 36px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+    top: auto;
+    left: auto;
+    border: 1px solid #fff;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  .profile__add-button {
+    width: 282px;
+    height: 50px;
+    border-radius: 2px;
+    margin-top: 20px;
+    margin: 0;
+    width: 90%;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
 }
