@@ -1,4 +1,4 @@
-.card__list {
+.cards__list {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 282px);
@@ -12,13 +12,14 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card__image {
+  object-fit: cover;
   width: 282px;
   height: 282px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 .card__description {
@@ -31,12 +32,10 @@
   padding-right: 20px;
   align-items: center;
   justify-content: space-between;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .card__title {
-  font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 24px;
   font-weight: 900;
   line-height: 1.2;
@@ -44,6 +43,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin: 0;
 }
 
 .card__like-button {
@@ -56,5 +56,5 @@
 
 .card__like-button:hover {
   cursor: pointer;
-  color: gray;
+  opacity: 0.5;
 }

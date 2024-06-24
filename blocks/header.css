@@ -1,8 +1,8 @@
 .header {
   margin-top: 45px;
-  height: 74px;
+  min-height: 74px;
   border-bottom: solid;
-  border-color: #545454;
+  border-color: rgb(84 84 84 / 0.7);
   border-width: 1px;
 }
 
