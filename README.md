@@ -10,8 +10,6 @@ This project tasked me with making a responsive web design, using flex and grid 
 
 Figma design, flex and grid layouts, media queries
 
-# Screenshots
-
 # Github Link
 
 https://github.com/Chitt13/se_project_aroundtheus
