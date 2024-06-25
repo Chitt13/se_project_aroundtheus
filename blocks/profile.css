@@ -77,15 +77,14 @@
 @media screen and (max-width: 775px) {
   .profile {
     display: flex;
-    padding-top: 40px;
   }
 
   .profile__info {
-    width: 100%;
+    max-width: 100%;
   }
 
   .profile__description {
-    width: 100%;
+    max-width: 100%;
     padding-top: 7px;
   }
 }
@@ -94,6 +93,8 @@
   .profile {
     flex-direction: column;
     align-items: center;
+    padding-top: 0;
+    margin-bottom: 36px;
   }
 
   .profile__info {
@@ -132,12 +133,11 @@
   }
 
   .profile__add-button {
-    width: 282px;
     height: 50px;
     border-radius: 2px;
     margin-top: 20px;
     margin: 0;
-    width: 90%;
+    width: 282px;
     padding-left: 19px;
     padding-right: 19px;
   }
