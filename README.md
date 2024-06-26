@@ -12,7 +12,7 @@ Figma design, flex and grid layouts, media queries
 
 # Github Link
 
-https://github.com/Chitt13/se_project_aroundtheus
+https://chitt13.github.io/se_project_aroundtheus/
 
 # Video Link
 
