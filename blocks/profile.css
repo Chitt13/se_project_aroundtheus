@@ -97,19 +97,21 @@
     font-size: 30px;
   }
 
-@media screen and (max-width: 325px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 0;
-    margin-bottom: 36px;
+  @media screen and (max-width: 325px) {
+    .profile {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+      margin-bottom: 36px;
+    }
   }
 
   .profile__info {
     margin-top: 30px;
     max-width: 90%;
     text-align: center;
-    margin-left: 0;
+    margin: 0;
+    align-self: center;
   }
 
   .profile__title {
@@ -149,5 +151,6 @@
 
   .profile__image {
     margin-right: 0;
+    margin-bottom: 30px;
   }
 }
