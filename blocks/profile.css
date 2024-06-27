@@ -97,7 +97,7 @@
     font-size: 30px;
   }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 325px) {
   .profile {
     flex-direction: column;
     align-items: center;
