@@ -18,6 +18,7 @@
   line-height: 1.1;
   grid-area: title;
   margin: 0;
+  max-width: 400px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -77,6 +78,7 @@
 @media screen and (max-width: 775px) {
   .profile {
     display: flex;
+    flex-direction: column;
   }
 
   .profile__info {
@@ -85,7 +87,7 @@
   }
 
   .profile__description {
-    max-width: 100%;
+    max-width: 282px;
     padding-top: 7px;
   }
 
@@ -95,11 +97,11 @@
 
   .profile__title {
     font-size: 30px;
+    max-width: 222px;
   }
 
   @media screen and (max-width: 325px) {
     .profile {
-      flex-direction: column;
       align-items: center;
       padding-top: 0;
       margin-bottom: 36px;
@@ -133,7 +135,6 @@
     height: 18px;
     top: auto;
     left: auto;
-    border: 1px solid #fff;
     padding: 0;
     box-sizing: border-box;
     margin-top: 10px;
