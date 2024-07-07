@@ -103,25 +103,30 @@
       </footer>
     </div>
 
-    <div class="modal modal_opened">
+    <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="modal-close-button"></button>
+        <button
+          class="modal__close modal_opened"
+          id="modal-close-button"
+        ></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form form">
           <input
             type="text"
             name="title"
+            id="profile-title-input"
             class="form__input"
             placeholder="Name"
           />
           <input
             type="text"
             name="description"
+            id="profile-description-input"
             class="form__input"
             placeholder="Description"
           />
+          <button class="button modal__button" type="submit">Save</button>
         </form>
-        <button class="modal__button">Save</button>
       </div>
     </div>
 
