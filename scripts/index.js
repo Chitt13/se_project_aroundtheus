@@ -86,3 +86,5 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
 });
+
+fmnbdfbdjksbfjksdbfkj;
