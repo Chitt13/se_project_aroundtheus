@@ -12,7 +12,7 @@
   padding: 0 19px;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 
@@ -30,7 +30,6 @@
   position: absolute;
   top: -45px;
   right: -45px;
-  cursor: pointer;
   width: 40px;
   height: 40px;
   background-image: url("../images/close-icon.svg");
@@ -38,6 +37,11 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
 .modal__heading {
@@ -62,6 +66,10 @@
   font-weight: 400;
   line-height: 1.2px;
   text-align: center;
+}
+
+.modal__button:hover {
+  opacity: 80%;
   cursor: pointer;
 }
 
