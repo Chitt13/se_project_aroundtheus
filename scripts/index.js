@@ -25,9 +25,7 @@ const initialCards = [
   },
 ];
 
-/*-------------------------------------------------------------------*/
-/*                         Elements                                  */
-/*-------------------------------------------------------------------*/
+//Elements
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const modalCloseButton = document.querySelector("#modal-close-button");
@@ -41,16 +39,16 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template").content;
 
-/*-------------------------------------------------------------------*/
-/*                         Functions                                 */
-/*-------------------------------------------------------------------*/
+//New Card Modal
+const addNewCardButton = document.querySelector(".profile__add-button");
+const addCardModal = document.querySelector("#add-card-modal");
+
+//Functions
 function closePopUp() {
   profileEditModal.classList.remove("modal_opened");
 }
 
-/*-------------------------------------------------------------------*/
-/*                      Event Handlers                               */
-/*-------------------------------------------------------------------*/
+//Event Handlers
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
@@ -69,9 +67,7 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-/*-------------------------------------------------------------------*/
-/*                      Event Listeners                              */
-/*-------------------------------------------------------------------*/
+//Event Listeners
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -86,3 +82,13 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
 });
+
+const likeButtons = document.querySelectorAll(".card__like-button");
+likeButtons.forEach((likeButton) => {
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+});
+
+//New Card Listener
+addNewCardButton.addEventListener("click", addCardModal);
