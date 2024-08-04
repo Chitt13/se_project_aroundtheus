@@ -45,8 +45,11 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
+const addCardTitleInput = document.querySelector("#add-card-title-input");
+const addCardLinkInput = document.querySelector("#add-card-link-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardModal = document.querySelector("#add-card-modal");
+const addCardForm = addCardModal.querySelector(".modal__form");
 
 //Functions
 function closePopUp() {
@@ -66,6 +69,20 @@ function handleProfileEditSubmit(e) {
   closePopUp();
 }
 
+function renderCard(cardData) {
+  const cardElement = getCardElement(cardData);
+  cardListEl.prepend(cardElement);
+}
+
+function handleAddCardSubmit(e) {
+  e.preventDefault();
+  const name = addCardTitleInput.value;
+  const link = addCardLinkInput.value;
+  const cardElement = getCardElement({ name, link });
+  cardListEl.prepend(cardElement);
+  closePopUp();
+}
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -77,14 +94,6 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
-
-  //Find trash can image
-
-  //Add event listener to trash can
-  //cardElement.remove();
-
-  //Add click listener to the cardImage
-  //openModal with previewImageModal
 
   return cardElement;
 }
@@ -105,12 +114,9 @@ profileCloseButton.addEventListener("click", closePopUp);
 newCardCloseButton.addEventListener("click", closePopUp);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+addCardForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
 });
-
-//DELETE DELETE DELETE ?????
-const likeButtons = document.querySelectorAll(".card__like-button");
-likeButtons.forEach((likeButton) => {});
