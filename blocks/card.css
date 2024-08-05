@@ -10,6 +10,7 @@
   object-fit: cover;
   width: 282px;
   height: 282px;
+  position: relative;
 }
 
 .card__description {
@@ -55,13 +56,13 @@
 }
 
 .card__delete-button {
-  background-image: url(../images/delete-icon.svg);
+  background: transparent url(../images/delete-icon.svg) center no-repeat;
   border-width: 0;
-  height: 332px;
-  width: 332px;
+  height: 19px;
+  width: 18px;
   top: 18px;
   left: 249px;
-  position: relative;
+  position: absolute;
   cursor: pointer;
 }
 

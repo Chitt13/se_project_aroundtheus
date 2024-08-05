@@ -120,3 +120,8 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
 });
+
+const deleteButton = document.querySelector(".card__delete-button");
+deleteButton.addEventListener("click", () => {
+  cardElement.remove();
+});
