@@ -4,6 +4,7 @@
   list-style-type: none;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .card__image {
@@ -64,6 +65,7 @@
   left: 249px;
   position: absolute;
   cursor: pointer;
+  z-index: 1;
 }
 
 .card__delete-button:hover {

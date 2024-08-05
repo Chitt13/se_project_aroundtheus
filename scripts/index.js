@@ -94,6 +94,10 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   return cardElement;
 }
@@ -119,9 +123,4 @@ addCardForm.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
-});
-
-const deleteButton = document.querySelector(".card__delete-button");
-deleteButton.addEventListener("click", () => {
-  cardElement.remove();
 });
