@@ -27,7 +27,9 @@ const initialCards = [
 
 //Cards
 const cardListEl = document.querySelector(".cards__list");
-const cardTemplate = document.querySelector("#card-template").content;
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
 
 //Buttons
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -51,14 +53,27 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
 
+const imageModal = document.querySelector("#image-modal");
+const imageModalCloseButton = imageModal.querySelector(
+  "#image-modal-close-button"
+);
+const modalImage = imageModal.querySelector("#modal-image");
+
 //Functions
 function closePopUp() {
   profileEditModal.classList.remove("modal_opened");
   addCardModal.classList.remove("modal_opened");
+  imageModal.classList.remove("modal_opened");
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+}
+
+function openImageModal(imageSrc, imageAlt) {
+  modalImage.src = imageSrc;
+  modalImage.alt = imageAlt;
+  openModal(imageModal);
 }
 
 //Event Handlers
@@ -98,6 +113,15 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
+  cardImageEl.addEventListener("click", () => {
+    imageModal.querySelector(".modal__image").src = cardData.link;
+    imageModal.querySelector(".modal__image").alt = cardData.name;
+    imageModal.querySelector(".modal__image-title").textContent = cardData.name;
+    openModal(imageModal);
+  });
+
+  cardImageEl.src = cardData.link;
+  cardImageEl.alt = cardData.name;
 
   return cardElement;
 }
@@ -116,6 +140,8 @@ addNewCardButton.addEventListener("click", () => {
 profileCloseButton.addEventListener("click", closePopUp);
 
 newCardCloseButton.addEventListener("click", closePopUp);
+
+imageModalCloseButton.addEventListener("click", () => closePopUp(imageModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardSubmit);
