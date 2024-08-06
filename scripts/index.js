@@ -52,7 +52,6 @@ const addCardLinkInput = document.querySelector("#add-card-link-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
-
 const imageModal = document.querySelector("#image-modal");
 const imageModalCloseButton = imageModal.querySelector(
   "#image-modal-close-button"
