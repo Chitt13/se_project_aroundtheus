@@ -88,6 +88,8 @@ function handleAddCardSubmit(e) {
   const link = addCardLinkInput.value;
   renderCard({ name, link }, cardListEl);
   closePopUp(addCardModal);
+  addCardTitleInput.value = "";
+  addCardLinkInput.value = "";
 }
 
 function getCardElement(cardData) {

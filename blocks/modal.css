@@ -128,3 +128,9 @@
     right: 1px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .modal__heading {
+    font-size: 18px;
+  }
+}
