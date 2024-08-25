@@ -88,8 +88,7 @@ function handleAddCardSubmit(e) {
   const link = addCardLinkInput.value;
   renderCard({ name, link }, cardListEl);
   closePopUp(addCardModal);
-  addCardTitleInput.value = "";
-  addCardLinkInput.value = "";
+  addCardForm.reset();
 }
 
 function getCardElement(cardData) {
@@ -134,6 +133,26 @@ addNewCardButton.addEventListener("click", () => {
 profileCloseButton.addEventListener("click", () =>
   closePopUp(profileEditModal)
 );
+
+document.addEventListener("keydown", function (event) {
+  let key = event.key;
+  if (key === "Escape") {
+    closePopUp(profileEditModal);
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  let key = event.key;
+  if (key === "Escape") {
+    closePopUp(addCardModal);
+  }
+});
+
+document.addEventListener("mousedown", function (closePopUp) {
+  const modalOpened = document.querySelector(".modal_opened");
+  if (closePopUp.target.classList.contains("modal_opened"))
+    closePopUp(addCardModal);
+});
 
 newCardCloseButton.addEventListener("click", () => closePopUp(addCardModal));
 

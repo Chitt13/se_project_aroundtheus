@@ -60,7 +60,7 @@
   margin-bottom: 54px;
 }
 
-.modal__button {
+.popup__button {
   width: 100%;
   height: 50px;
   background-color: black;
@@ -75,7 +75,7 @@
   text-align: center;
 }
 
-.modal__button:hover {
+.popup__button:hover {
   opacity: 80%;
   cursor: pointer;
 }
