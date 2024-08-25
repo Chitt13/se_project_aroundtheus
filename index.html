@@ -46,37 +46,33 @@
         <button class="modal__close" id="profile-modal-close-button"></button>
         <h4 class="modal__heading">Edit Profile</h4>
         <form class="modal__form form" id="profile-form">
-          <label class="modal__label">
-            <input
-              type="text"
-              name="name"
-              required
-              minlength="2"
-              maxlength="40"
-              id="profile-title-input"
-              class="form__input"
-              placeholder="Name"
-            />
-            <span class="popup__error" id="profile-title-input-error"
-              >Please fill out this field.</span
-            >
-          </label>
-          <label class="modal__label">
-            <input
-              type="text"
-              name="description"
-              required
-              minlength="2"
-              maxlength="200"
-              id="profile-description-input"
-              class="form__input"
-              placeholder="Description"
-            />
-            <span class="popup__error" id="profile-description-input-error"
-              >Please fill out this field.</span
-            >
-            <button class="button popup__button" type="submit">Save</button>
-          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            minlength="2"
+            maxlength="40"
+            id="profile-title-input"
+            class="form__input"
+            placeholder="Name"
+          />
+          <span class="popup__error" id="profile-title-input-error"
+            >Please fill out this field.</span
+          >
+          <input
+            type="text"
+            name="description"
+            required
+            minlength="2"
+            maxlength="200"
+            id="profile-description-input"
+            class="form__input"
+            placeholder="Description"
+          />
+          <span class="popup__error" id="profile-description-input-error"
+            >Please fill out this field.</span
+          >
+          <button class="button popup__button" type="submit">Save</button>
         </form>
       </div>
     </div>
