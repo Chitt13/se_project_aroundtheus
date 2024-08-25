@@ -57,6 +57,7 @@ const imageModalCloseButton = imageModal.querySelector(
   "#image-modal-close-button"
 );
 const modalImage = imageModal.querySelector("#modal-image");
+const popUps = document.querySelectorAll(".modal");
 
 //Functions
 
@@ -148,10 +149,15 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-document.addEventListener("mousedown", function (closePopUp) {
-  const modalOpened = document.querySelector(".modal_opened");
-  if (closePopUp.target.classList.contains("modal_opened"))
-    closePopUp(addCardModal);
+popUps.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closePopUp(popup);
+    }
+    if (evt.target.classList.contains("modal__close")) {
+      closePopUp(popup);
+    }
+  });
 });
 
 newCardCloseButton.addEventListener("click", () => closePopUp(addCardModal));
