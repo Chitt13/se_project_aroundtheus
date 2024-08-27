@@ -57,7 +57,7 @@
               class="form__input"
               placeholder="Name"
             />
-            <span class="popup__error" id="profile-title-input-error"
+            <span class="modal__error" id="profile-title-input-error"
               >Please fill out this field.</span
             >
           </label>
@@ -72,11 +72,17 @@
               class="form__input"
               placeholder="Description"
             />
-            <span class="popup__error" id="profile-description-input-error"
+            <span class="modal__error" id="profile-description-input-error"
               >Please fill out this field.</span
             >
           </label>
-          <button class="button popup__button" type="submit">Save</button>
+          <button
+            class="button modal__button"
+            id="modal-save-button"
+            type="submit"
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -98,7 +104,7 @@
               class="form__input"
               placeholder="Title"
             />
-            <span class="popup__error" id="add-card-title-input-error"
+            <span class="modal__error" id="add-card-title-input-error"
               >Please fill out this field.</span
             >
           </label>
@@ -111,12 +117,13 @@
               class="form__input"
               placeholder="Image link"
             />
-            <span class="popup__error" id="add-card-link-input-error"
+            <span class="modal__error" id="add-card-link-input-error"
               >Please enter a web address.</span
             >
           </label>
           <button
-            class="button popup__button popup__button_disabled"
+            class="button modal__button modal__button_disabled"
+            id="modal-save-button"
             type="submit"
             disabled
           >

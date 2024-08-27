@@ -131,22 +131,14 @@ addNewCardButton.addEventListener("click", () => {
   openModal(addCardModal);
 });
 
-profileCloseButton.addEventListener("click", () =>
-  closePopUp(profileEditModal)
-);
-
 document.addEventListener("keydown", function (event) {
-  let key = event.key;
+  const key = event.key;
   if (key === "Escape") {
     closePopUp(profileEditModal);
-  }
-});
-
-document.addEventListener("keydown", function (event) {
-  let key = event.key;
-  if (key === "Escape") {
+    closePopUp(imageModal);
     closePopUp(addCardModal);
   }
+  document.removeEventListener("keydown", function (key) {});
 });
 
 popUps.forEach((popup) => {
