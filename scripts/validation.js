@@ -40,7 +40,7 @@ function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const { submitButtonSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = [...formEl.querySelectorAll("submitButtonSelector")];
+  const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
@@ -66,12 +66,11 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".form__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: ".modal__button_disabled",
+  inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  errorClass: ".modal__error_visible",
 };
 
 enableValidation(config);
-
 //console.log("#" + inputEl.id + "-error");   IS THE SAME AS
 //console.log(`#${inputEl.id}-error`);
