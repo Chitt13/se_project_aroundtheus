@@ -64,10 +64,21 @@ const popUps = document.querySelectorAll(".modal");
 function closePopUp(popup) {
   console.log(popup);
   popup.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
+}
+
+function handleEscape(event) {
+  const key = event.key;
+  if (key === "Escape") {
+    closePopUp(profileEditModal);
+    closePopUp(imageModal);
+    closePopUp(addCardModal);
+  }
 }
 
 //Event Handlers
@@ -129,16 +140,6 @@ profileEditButton.addEventListener("click", () => {
 
 addNewCardButton.addEventListener("click", () => {
   openModal(addCardModal);
-});
-
-document.addEventListener("keydown", function (event) {
-  const key = event.key;
-  if (key === "Escape") {
-    closePopUp(profileEditModal);
-    closePopUp(imageModal);
-    closePopUp(addCardModal);
-  }
-  document.removeEventListener("keydown", function (key) {});
 });
 
 popUps.forEach((popup) => {
