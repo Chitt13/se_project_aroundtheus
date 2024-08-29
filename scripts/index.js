@@ -75,9 +75,7 @@ function openModal(modal) {
 function handleEscape(event) {
   const key = event.key;
   if (key === "Escape") {
-    closePopUp(profileEditModal);
-    closePopUp(imageModal);
-    closePopUp(addCardModal);
+    document.querySelectorAll(".modal_opened").forEach(closePopUp);
   }
 }
 
@@ -152,10 +150,6 @@ popUps.forEach((popup) => {
     }
   });
 });
-
-newCardCloseButton.addEventListener("click", () => closePopUp(addCardModal));
-
-imageModalCloseButton.addEventListener("click", () => closePopUp(imageModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardSubmit);

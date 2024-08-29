@@ -60,8 +60,6 @@ function enableValidation(options) {
   });
 }
 
-const modal = document.querySelector(".modal__container");
-
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".form__input",
