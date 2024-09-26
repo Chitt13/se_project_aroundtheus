@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -24,6 +27,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const card = new Card(cardData, "#card-template");
+card.getView();
 
 //Cards
 const cardListEl = document.querySelector(".cards__list");
@@ -62,7 +73,6 @@ const popUps = document.querySelectorAll(".modal");
 //Functions
 
 function closePopUp(popup) {
-  console.log(popup);
   popup.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscape);
 }
