@@ -16,17 +16,17 @@ export default class Card {
     const deleteButton = this._cardElement
       .querySelector(".card__delete-button")
       .addEventListener("click", () => {
-        this.handleDeleteCard();
+        this._handleDeleteCard();
       });
     this._cardImage.addEventListener("click", () => {
-      this._handleImageClick(this);
+      this._handleCardImageClick(this);
     });
   }
 
   _handleLikeIcon() {
     this._cardElement
       .querySelector(".card__like-button")
-      .classList.toggle(".card__like-button_active");
+      .classList.toggle("card__like-button_active");
   }
 
   _handleDeleteCard() {

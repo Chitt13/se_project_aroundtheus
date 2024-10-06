@@ -5,26 +5,18 @@ export default class FormValidator {
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
-    this._formEl = formEl;
+    this._formEl = document.querySelector(formEl);
   }
 
   _showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
-    const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
+    const errorMessageEl = this_formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
-    errorMessageEl.textContent = inputEl.validationMessage;
-    errorMessageEl.urlContent = inputEl.validationMessage;
-    errorMessageEl.classList.add(this._errorClass);
-  }
-
-  _showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
-    const errorMessageEl = this.formEl.querySelector(`#${inputEl.id}-error`);
-    inputEl.classList.add(this.inputErrorClass);
     errorMessageEl.textContent = inputEl.validationMessage;
     errorMessageEl.urlContent = inputEl.validationMessage;
     errorMessageEl.classList.add(errorClass);
   }
 
-  _hideInputError(inputEl) {
+  _hideInputError(_formEl, inputEl) {
     const errorElement = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(this._inputErrorClass);
     errorElement.textContent = "";
@@ -65,14 +57,14 @@ export default class FormValidator {
 
   _setEventListeners() {
     this._inputEls = Array.from(
-      this.formEl.querySelectorAll(this._inputSelector)
+      this._formEl.querySelectorAll(this._inputSelector)
     );
-    this._submitButton = this.formEl.querySelector(this._submitButtonSelector);
+    this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
 
-    this.inputEls.forEach((inputEl) => {
+    this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
         this.checkInputValidity(inputEl);
-        this.toggleButtonState(this.inputEls, this.submitButton);
+        this.toggleButtonState(this._inputEls, this._submitButton);
       });
     });
   }
@@ -82,6 +74,6 @@ export default class FormValidator {
       e.preventDefault();
     });
 
-    setEventListeners();
+    this._setEventListeners();
   }
 }
