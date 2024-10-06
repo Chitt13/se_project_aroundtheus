@@ -77,10 +77,10 @@ const settings = {
   inputErrorClass: ".modal__input_type_error",
   errorClass: ".modal__error_visible",
 };
-const formValidator = new FormValidator(settings, ".modal__form");
-formValidator.enableValidation;
+const formValidator = new FormValidator(settings, profileEditForm);
+formValidator.enableValidation();
 //Functions
-
+console.log(formValidator.enableValidation(settings));
 function closePopUp(popup) {
   popup.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscape);

@@ -5,10 +5,10 @@ export default class FormValidator {
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
-    this._formEl = document.querySelector(formEl);
+    this._formEl = formEl;
   }
 
-  _showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  _showInputError(inputEl, { inputErrorClass, errorClass }) {
     const errorMessageEl = this_formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
     errorMessageEl.textContent = inputEl.validationMessage;
@@ -48,7 +48,9 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputEl) {
+    console.log("I'm inside");
     if (!inputEl.validity.valid) {
+      console.log("I am in here");
       this._showInputError(inputEl);
     } else {
       this._hideInputError(inputEl);
@@ -63,8 +65,8 @@ export default class FormValidator {
 
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
-        this.checkInputValidity(inputEl);
-        this.toggleButtonState(this._inputEls, this._submitButton);
+        this._checkInputValidity(inputEl);
+        this._toggleButtonState(this._inputEls, this._submitButton);
       });
     });
   }
@@ -73,7 +75,6 @@ export default class FormValidator {
     this._formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-
     this._setEventListeners();
   }
 }
