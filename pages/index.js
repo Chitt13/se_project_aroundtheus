@@ -70,17 +70,35 @@ const imageModal = document.querySelector("#image-modal");
 // const modalImage = imageModal.querySelector("#modal-image");
 const popUps = document.querySelectorAll(".modal");
 
-const settings = {
+// const settings = {
+//   inputSelector: ".form__input",
+//   submitButtonSelector: ".modal__button",
+//   inactiveButtonClass: ".modal__button_disabled",
+//   inputErrorClass: ".modal__input_type_error",
+//   errorClass: ".modal__error_visible",
+// };
+
+const validationSettings = {
   inputSelector: ".form__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: ".modal__input_type_error",
-  errorClass: ".modal__error_visible",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
-const formValidator = new FormValidator(settings, profileEditForm);
-formValidator.enableValidation();
+
+// const formValidator = new FormValidator(settings, profileEditForm);
+// formValidator.enableValidation();
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  profileEditForm
+);
+const addFormValidator = new FormValidator(validationSettings, addCardForm);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+
 //Functions
-console.log(formValidator.enableValidation(settings));
 function closePopUp(popup) {
   popup.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscape);
