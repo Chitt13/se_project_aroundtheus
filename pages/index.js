@@ -38,17 +38,10 @@ card.getView();
 
 //Cards
 const cardListEl = document.querySelector(".cards__list");
-// const cardTemplate = document
-//   .querySelector("#card-template")
-//   .content.querySelector(".card");
 
 //Buttons
 const profileEditButton = document.querySelector(".profile__edit-button");
-// const profileCloseButton = document.querySelector(
-//   "#profile-modal-close-button"
-// );
 const addNewCardButton = document.querySelector(".profile__add-button");
-// const newCardCloseButton = document.querySelector("#add-modal-close-button");
 
 //Elements
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -64,19 +57,7 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const imageModal = document.querySelector("#image-modal");
-// const imageModalCloseButton = imageModal.querySelector(
-//   "#image-modal-close-button"
-// );
-// const modalImage = imageModal.querySelector("#modal-image");
 const popUps = document.querySelectorAll(".modal");
-
-// const settings = {
-//   inputSelector: ".form__input",
-//   submitButtonSelector: ".modal__button",
-//   inactiveButtonClass: ".modal__button_disabled",
-//   inputErrorClass: ".modal__input_type_error",
-//   errorClass: ".modal__error_visible",
-// };
 
 const validationSettings = {
   inputSelector: ".form__input",
@@ -136,11 +117,13 @@ function renderCard(cardData) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
+  console.log("1234567890");
   const name = addCardTitleInput.value;
   const link = addCardLinkInput.value;
   renderCard({ name, link }, cardListEl);
   closePopUp(addCardModal);
   addCardForm.reset();
+  addFormValidator.disableSubmitButton();
 }
 ////
 // function getCardElement(cardData) {

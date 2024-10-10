@@ -10,14 +10,6 @@ export default class FormValidator {
     this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
   }
 
-  // _showInputError(inputEl, { inputErrorClass, errorClass }) {
-  //   const errorMessageEl = this_formEl.querySelector(`#${inputEl.id}-error`);
-  //   inputEl.classList.add(this._inputErrorClass);
-  //   errorMessageEl.textContent = inputEl.validationMessage;
-  //   errorMessageEl.urlContent = inputEl.validationMessage;
-  //   errorMessageEl.classList.add(errorClass);
-  // }
-
   _showInputError(inputEl) {
     const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
@@ -30,7 +22,7 @@ export default class FormValidator {
   //   const errorElement = this._formEl.querySelector(`#${inputEl.id}-error`);
   //   inputEl.classList.remove(this._inputErrorClass);
   //   errorElement.textContent = "";
-  //   errorElement.classList.remove(this._errorClass);
+  //   errorElement.classList.remove(errorClass);
   // }
 
   _hideInputError(inputEl) {
@@ -44,19 +36,6 @@ export default class FormValidator {
   _hasInvalidInput() {
     return !this._inputEls.every((inputEl) => inputEl.validity.valid);
   }
-
-  // _toggleButtonState(inputEls) {
-  //   let foundInvalid = false;
-  //   this._inputEls.forEach((inputEl) => {
-  //     if (!inputEl.validity.valid) {
-  //       foundInvalid = true;
-  //     }
-  //   });
-  //   if (foundInvalid) {
-  //     this.disableSubmitButton(foundInvalid);
-  //   } else {
-  //     this.enableSubmitButton();
-  //   }
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
@@ -85,20 +64,6 @@ export default class FormValidator {
       this._hideInputError(inputEl);
     }
   }
-
-  // _setEventListeners() {
-  //   this._inputEls = Array.from(
-  //     this._formEl.querySelectorAll(this._inputSelector)
-  //   );
-  //   this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
-
-  //   this._inputEls.forEach((inputEl) => {
-  //     inputEl.addEventListener("input", (e) => {
-  //       this._checkInputValidity(inputEl);
-  //       this._toggleButtonState(this._inputEls, this._submitButton);
-  //     });
-  //   });
-  // }
 
   _setEventListeners() {
     this._inputEls.forEach((inputEl) => {
